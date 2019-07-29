@@ -1,0 +1,3 @@
+@media screen and (max-width:768px){  
+    mat-card-header mat-card-title{padding:10px 0 !important; }
+}

@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./assets/device.css";
+/*------------------------------------------------------------------------------------------------------*/
+*{ outline:none; margin:0; padding:0;}
+/*------------------------------------------------------------------------------------------------------*/
+*, *:before, *:after{-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+/*------------------------------------------------------------------------------------------------------*/
+mat-card,mat-form-field,mat-dialog-actions{float: left; width: 100%; overflow: hidden;}
+mat-dialog-actions{border-top: 1px solid #e7e7e7;}
+.mat-dialog-title{border-bottom: 1px solid #d4d4d4; padding-bottom: 15px;}
+mat-dialog-container{max-width: 600px !important;}
+mat-checkbox,mat-radio-button{margin-right: 15px;}
+.btnClose{position: absolute; right: 0; top: 0; background: #b3080f; border: 0; padding: 7px; color: #fff; cursor: pointer;}
+.mat-error{font-size: 11px;}
+.button{background: #b3080f; color: #fff; text-transform: uppercase;}
+.txtCenter{text-align: center !important;}
+
+.siteTtl{padding-left: 20px; }
+.btnBox{float: left; width: 100%;}
+
+.btnInfoTooltip{display: inline-block; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 12px; color: #fff; font-style: italic; border-radius: 100%; width: 20px; height: 20px; border: 0; background: #ff0000;}
+
+mat-nav-list a{font-weight: 700; border-top: 1px solid #e7e7e7;}
+mat-nav-list a:last-child{ border-bottom: 1px solid #e7e7e7;}
+mat-nav-list a div{transition: 0.3s ease-out;}
+mat-nav-list a:hover div{color: #ed1c24;}
+.mat-list-base .mat-list-item{font-size: 14px;  text-transform: capitalize;}
+.mat-list-base .mat-list-item mat-icon{float: left; margin-right: 7px; margin-top: 5px;}
+.sidenav {width: 300px !important;}
+mat-sidenav .mat-toolbar{height: auto; background: #ed1c24 !important; padding:60px 0 15px; text-align: center; display: inline-block; }
+mat-sidenav .mat-toolbar .imgProf{display: inline-block; width:50px; height:50px; line-height:60px; overflow: hidden; border: 1px solid #fff; margin-right: 10px; text-align: center; border-radius: 100%;}
+mat-sidenav .mat-toolbar .imgProf svg {height: 30px; }
+mat-sidenav .mat-toolbar .imgProf path{fill: #fff; }
+mat-sidenav .mat-toolbar span{float: left; width: 100%; font-size: 15px; text-transform: uppercase; color: #fff;}
+mat-nav-list{padding-top: 0 !important;}
+
+a{text-decoration: none; color: #000;}
+.btnSmall{line-height: 20px !important; font-size: 10px !important; font-size: 500; padding: 0 5px !important; text-transform: uppercase;}
+
+body,html{float: left; width: 100%; overflow-x: hidden;}
+body{font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 14px; color: #000;}
+
+app-root{float: left; width: 100%; height: 100vh;}
+.example-spacer { flex: 1 1 auto;}
+.container{float: left; width: 100%; padding: 0 15px;}
+/* .{justify-content: center; background: #ed1c24 !important; color: #ffffff !important;} */
+
+.mat-card-header-text{float: left !important; width: 100% !important; margin: 0 !important; padding: 0 15px;}
+
+ul.form{float: left; width: 100%;}
+ul.form li{float: left; width: 100%; margin-bottom: 15px; list-style: none;}
+
+
+.centre-hold{float: left; width: 100%; max-width: 1000px; position: relative; left: 50%; transform: translate(-50%); margin-top: 40px; }
+.header{background: #ed1c24; color: #fff;}
+.logo{float: left; margin-top:8px;}
+
+.imgBrws{display: inline-block; position: relative;}
+.imgBrws .mat-card{padding:10px  15px; min-height: 60px;}
+.imgBrws .mat-card img{width: 100%;}
+.imgBrws .imgBox{display: inline-block; width: 100%; max-height: 200px; overflow: hidden; }
+.imgBrws .imgBox img{max-width: 100%;}
+app-fileinput{ float: left; width: 46%; text-align: center; }
+app-fileinput:last-of-type{float: right;}
+
+.radioBox{float: left; width: 100%; padding: 10px 0;}
+.radioBox h4{float: left; width: 100%; margin-bottom: 10px;}
+
+div.selectBox{float: left; width: 100%; padding: 10px 0;}
+div.selectBox mat-form-field-wrapper{padding: 0;}
+
+div.inputField{float: left; width: 100%; padding: 10px 0;}
+
+.userAfterLogin{float: left; display: flex; align-items: center; margin-right: 10px;}
+.userAfterLogin .imgProf{float: left; width: 24px; height:24px; line-height: 22px; overflow: hidden; border: 1px solid #fff; margin-right: 10px; text-align: center; border-radius: 100%;}
+.userAfterLogin .imgProf svg{height:12px;}
+.userAfterLogin .imgProf path{fill: #fff; }
+.userAfterLogin span{font-size:14px; font-weight: 700;}
+
+.noRecordFoundSection {float: left; width: 100%; text-align: center; padding: 20px;}
+.noRecordFoundSection .imgBox{display: inline-block; float: none; max-width: 500px; width: 80%;}
+.noRecordFoundSection h2{float: left; width: 100%; margin-top: 30px; font-size: 20px; color: #575757;}
+
+
+.wrap-mat-radio-label { white-space: normal;}
+
+
+.tblWrap{overflow: auto; display: inline-block; width: 100%;}
+.tblWrap table{width: 100%; border-left: 1px solid #ddd;}
+.tblWrap table tbody{max-height: 60vh; overflow: auto; display: block;}
+.tblWrap td, .tblWrap th { border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding:7px;}  
+.tblWrap th { padding:10px 7px; text-align:left; background-color:#ed1c24; color:white;}
+.tblWrap tr:nth-child(even){background-color: #f2f2f2;}  
+.tblWrap tr { transition: ease-out 0.3s;}  
+.tblWrap tr:hover {background-color: #ddd;}  
+.tblWrap tr > th:first-child,
+.tblWrap tr > td:first-child{width:80px;}
+
+.tblWrap tbody {display:block;   overflow:auto;}
+.tblWrap thead, .tblWrap tbody tr { display:table; width:100%; table-layout:fixed;}
+.tblWrap head { width: calc( 100% - 17px )}
+.mat-tooltip{font-size :20px;  white-space: pre-line;
+   max-width: 500px !important;}
+@media screen and (max-width:1120px){  
+   .tblWrap table{min-width: 1120px;}
+   thead { width: 100%;}
+ }  
+
+
+@media screen and (max-width:850px){
+   app-fileinput{width: 100%; margin: 5px 0;}
+   .siteTtl{display: none;}
+}
+@media screen and (max-width:640px){
+    .userAfterLogin span{display: none;}
+    .noRecordFoundSection h2{font-size: 15px; }
+    .userAfterLogin{margin-right: 0;}
+ } 
+

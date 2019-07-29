@@ -1,0 +1,113 @@
+<mat-progress-bar mode="indeterminate" [color]="accent" *ngIf="showProgress"></mat-progress-bar>
+<div *ngIf="!showProgress">
+  <div class="container" fxLayout="column" *ngIf="Norecord">
+    <div class="audtorRemark" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start">
+      <div class="noRecordFoundSection">
+        <div class="imgBox"></div>
+        <h2>OOPS! No Record Found.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container" fxLayout="column" [formGroup]="pendingReview" *ngIf="!Norecord">
+    <div class="pgQues">
+      <mat-card>
+        <div class="scoreNo">Score:<br>{{finalScore}}</div>
+        <h3>Ques:-{{question}}</h3>
+      </mat-card>
+    </div>
+  </div>
+  <div class="container" fxLayout="column" [formGroup]="pendingReview" *ngIf="!Norecord">
+    <div formArrayName="multipendingReview">
+      <div class="audtorRemark" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start">
+        <div class="item item-1" *ngFor="let group of getmultipleQuesControl.controls;let i=index;" [formGroupName]="i"
+          fxLayout.xs="column" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="33">
+          <mat-card>
+            <small>Auditor Name</small>
+            <h2>{{group.get('s_EmployeeName').value}}</h2>
+            <div class="iconFiles imgBox">
+              <h5>Image</h5>
+              <i><img alt="" src="{{group.get('s_ImagePath').value}}"
+                  (click)="openDialog(group.get('s_ImagePath').value)" /></i>
+            </div>
+            <div class="rightBox">
+              <div class="audioFiles">
+                <h5>Audio</h5>
+                <audio controls="controls" src="{{group.get('s_AudioPath').value}}"></audio>
+              </div>
+              <div class="sec answer">
+                <h5>Answer</h5>
+                <p>
+                  {{group.get('s_AnsValue').value}}
+                </p>
+              </div>
+              <div class="sec answer">
+                <h5>Action till Date</h5>
+                <p>
+                  {{group.get('d_PerformedDate').value| date: 'dd/MM/yyyy'}}
+                </p>
+              </div>
+              <div class="sec score">
+                <h5>Score : {{group.get('s_ScoreNo').value}}</h5>
+              </div>
+
+              <div class="sec answer">
+                <h5>Observation</h5>
+                <p>
+                  {{group.get('s_Observation').value}}
+                </p>
+              </div>
+              <div class="sec answer">
+                <h5>Suggestion</h5>
+                <p>
+                  {{group.get('s_Suggestion').value}}
+                </p>
+              </div>
+              <div class="comment">
+                <h3 style="color: blue;cursor: pointer;" (click)="toogel(i,group.get('Observation').value.length)">
+                  <b>{{group.get('Observation').value.length}}</b> Comments</h3>
+                <div class="commentList" *ngIf="ActivateIndex.includes(i)">
+                  <div *ngFor="let data of group.get('Observation').value;let z=index">
+                    <div [ngClass]="(z+1)%2==0 ? 'cmtPoint left' : 'cmtPoint right'">
+                      <div class="inner">
+                        <h5>{{data.s_FullName}}</h5>
+                        <small>{{data.d_LogDate}}</small>
+                        <p>
+                          {{data.s_Observation}}
+                        </p>
+                        <p style="margin-top: 10px;">
+                          <!-- <a *ngIf="data.s_ObservationAudioPath" target="_blank" mat-raised-button
+                            href="{{data.s_ObservationAudioPath}}">Audio</a> -->
+                            <button mat-raised-button *ngIf="data.s_ObservationAudioPath"   (click)="openDialog(data.s_ObservationAudioPath)">Audio</button>
+                          &nbsp;
+                          <button mat-raised-button *ngIf="data.s_ObservationDocumentPath"   (click)="openDialog(data.s_ObservationDocumentPath)">Document</button>
+                      
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="typeRemark">
+                <mat-form-field class="demo-full-width">
+                  <input matInput placeholder="Remark" formControlName="remark" />
+                </mat-form-field>
+              </div>
+              <button mat-flat-button color="primary" [disabled]="group.get('remark').invalid"
+                (click)="getdate(group,'Approve')">Approve</button>
+              &nbsp;
+              <button mat-raised-button class="button" [disabled]="group.get('remark').invalid"
+                (click)="getdate(group,'Reject')">Reject</button>
+            </div>
+          </mat-card>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div style="text-align: center">
+      <button mat-raised-button class="button" (click)="Cancel()">Back</button>
+    </div>
+  </div>
+</div>

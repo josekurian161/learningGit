@@ -1,0 +1,9 @@
+<mat-progress-bar mode="indeterminate" *ngIf="showProgress"></mat-progress-bar>
+<h2 mat-dialog-title>{{question}}</h2>
+<mat-dialog-content>
+  <ul class="form">
+    <dynamic-form [fields]="regConfig" (submit)="submit($event)">
+    </dynamic-form>
+
+  </ul>
+</mat-dialog-content>

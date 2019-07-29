@@ -1,0 +1,21 @@
+.areaInfo{float: left; width: 100%;  padding:14px;}
+.areaInfo .item{margin: 10px 0;}
+.areaInfo .item strong{text-transform: uppercase;}
+.btnEdit{float: right;}
+.survayList{margin: 30px 0;}
+mat-card{ padding: 0 !important;} 
+mat-card-header{float: left; width: 100%; background: #e7e7e7;}
+mat-card-header mat-card-title{float: left; width: 100%; padding:20px 0; margin: 0; font-size: 20px; display: flex; align-items: center; justify-content: space-between;}
+mat-card-content{float: left; width: 100%; padding:20px; }
+
+ul.survayList{float: left; width: 100%; }
+ul.survayList li{float: left; width: 100%; list-style: decimal inside; padding: 10px 0; border-bottom: 1px solid #e7e7e7; vertical-align: text-top;  }
+ul.survayList li:last-child{border-bottom: 0;}
+ul.survayList li a{display: inline-block; width:calc(100% - 100px); font-weight: 500; transition:0.3s ease-out;}
+ul.survayList li a:hover{ color: #3f51b5;}
+ul.survayList li button{ float: right;}
+
+.itemWrapp{float: left; width: 100%;}
+
+.color_1{background: #006400}
+.color_2{background: #b3080f}

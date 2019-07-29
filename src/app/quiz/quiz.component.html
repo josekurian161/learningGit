@@ -1,0 +1,35 @@
+<mat-progress-bar   mode="indeterminate" [color]="accent" *ngIf="showProgress"></mat-progress-bar>
+
+<form [formGroup]="AuditQuestions" *ngIf="!showProgress">
+<div class="areaInfo" fxLayout="row" fxLayoutWrap="nowrap" fxLayoutGap="20px" fxLayout.sm="column"
+fxLayout.xs="column">
+
+<div class="item clmnLeft" fxFlex="100%">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{Auditname}}:-{{totalAns}}/{{totalCount}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content formArrayName="multipleQues">
+      <ul class="survayList">
+        <li  *ngFor="let group of getmultipleQuesControl.controls;let i=index;" [formGroupName]="i">
+         <label>{{group.get('s_Question').value}} </label>
+          <button mat-flat-button color="primary"  [ngClass]="group.get('b_IsAnswered').value==false ? 'primary color_2' : 'primary color_1'" type="button" class="btnSmall" (click)="openDialog(group.get('s_QueCode').value)" >
+           Action
+          </button>
+        </li>
+      </ul>
+    </mat-card-content>
+ 
+  </mat-card>
+  <mat-card style="text-align: center">
+      <button  mat-flat-button color="primary"  [disabled]="btnStatus" (click)="submitValue()" type="button"  >
+         Save & Submit
+         </button>
+         &nbsp;
+         <button mat-raised-button   class="button"  (click)="Cancel()">Cancel</button>
+    </mat-card>
+</div>
+
+</div>
+</form>

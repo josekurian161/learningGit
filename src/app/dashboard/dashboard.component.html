@@ -1,0 +1,48 @@
+<mat-progress-bar mode="indeterminate" [color]="accent" *ngIf="showProgress"></mat-progress-bar>
+
+<div class="container" *ngIf="!showProgress">
+  <div class="areaInfo" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-around stretch" fxLayout.xs="column">
+    <div class="item item-1" fxFlex.xs="100" *ngFor="let group of getButtonvalue | dashboardFilter" fxFlex.sm="50"
+      fxFlex.md="33" fxFlex.lg="20" fxFlex.xl="20">
+      <mat-card>
+        <div class="topData">
+          <h3>{{group.s_PageName}}</h3>
+          <h5>Pending: 20</h5>
+        </div>
+        <button mat-raised-button class="button" (click)="Activity(group.s_PageValue,group.s_PageName)">click to view
+          <mat-icon aria-label="Side nav toggle icon">keyboard_arrow_right</mat-icon></button>
+      </mat-card>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container" >
+  <div class="areaInfo graphBox"  fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+    <div class="item item-2" fxFlex>
+        <mat-card style="background: transparent">
+            <canvas #lineChart ></canvas>
+        </mat-card>
+    </div>
+    <div class="item item-2" fxFlex>
+        <mat-card style="background: transparent">
+            <canvas #barChart></canvas>
+          </mat-card>
+      </div>
+  </div>
+</div>
+  <!-- <div class="container" *ngIf="!showProgress">
+    <div class="areaInfo graphBox" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
+      <div class="item item-2" fxFlex>
+        <mat-card>
+          <img src="../../assets/images/graph1.png" alt="">
+        </mat-card>
+      </div>
+      <div class="item item-2" fxFlex>
+        <mat-card>
+          <img src="../../assets/images/graph2.png" alt="">
+        </mat-card>
+      </div>
+    </div>
+  </div> -->

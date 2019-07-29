@@ -1,0 +1,65 @@
+  
+  <mat-progress-bar   mode="indeterminate" [color]="accent" *ngIf="showProgress"></mat-progress-bar>
+  <div class="centre-hold">
+    <mat-card [formGroup]="AuditSelect">
+      <h1>{{title}}</h1>
+      <mat-form-field class="demo-full-width margin-top" >
+        <mat-select [placeholder]="placeholder"   (selectionChange)="Selectedvalue($event.value)" formControlName="seletAudit">
+        <mat-option *ngFor="let item of auditArray"   [value]="item">{{item.s_AuditName}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <div class="auditDetailsWrapp" *ngIf="IsLoading">
+         <span style="color: blue;">Fetching Audit detail...
+            Please wait...</span> 
+        </div>
+
+        
+      <div class="auditDetailsWrapp"  *ngIf="displayInfo">
+        <h2>Details Of Auditor</h2>
+        <ul class="listOfAuditDetailsWrapp">
+          <li class="item"><Label>Audit Unique Code</Label> <Span>{{s_AuditUniqueCode}}
+              <!-- <button class="btnInfoTooltip" 
+              matTooltip="Info about the action"
+              aria-label="Button that displays a tooltip when focused or hovered over">
+              i
+            </button> -->
+          </Span></li>
+          <li class="item"><Label>Audit Name</Label> <Span>{{AuditName}}</Span></li>
+         <li class="item half"><Label>Plant Head Code</Label> <Span>{{s_PlantHeadCode}}</Span></li>
+         <li class="item half"><Label>Plant Quality Head Code</Label> <Span>{{s_PlantQualityHeadCode}}</Span></li>
+          <li class="item half"><Label>From Date</Label> <Span>{{d_FromDate}}</Span></li>
+          <li class="item half"><Label>To Date</Label> <Span>{{d_Todate}}</Span></li>
+          <li class="item half"><Label>QMS Certification Date</Label> <Span>{{d_QMSCertificatioDate}}</Span></li>
+          <li class="item half"><Label>QMS Expiry Date</Label> <Span>{{d_QMSExpiryDate}}</Span></li>
+          <li class="item half"><Label>Plant</Label> <Span>{{s_PlantName}}</Span></li>
+          <li class="item half"><Label>Plant Description</Label> <Span>  {{s_ProductCode}}</Span></li>
+          <li class="item half"><Label>Template Name</Label> <Span> {{s_TemplateName}}</Span></li>
+        </ul> 
+
+        <div class="tblWrap">
+            <table  border="0" cellspacing="0" cellpadding="0">
+              <thead>
+              <tr>
+                <th> Sr no. </th>
+                <th>Employee  </th>
+                <th>Roll  </th>
+                <th>Status  </th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of MapEmployee let i=index;" >
+                  <td> {{i+1}}</td> 
+                  <td>{{data.s_EmployeeName}} </td> 
+                  <td>{{data.s_RoleName}} </td> 
+                  <td>{{data.s_Status}} </td> 
+                </tr>
+              <tbody>
+            </table>
+          </div>
+      </div>
+        <button mat-raised-button  color="primary"  class="button"  [disabled]="AuditSelect.invalid || IsLoading" (click)="SetAudit()">{{label}}</button> 
+        &nbsp;
+        <button mat-raised-button   class="button"  (click)="Cancel()">Cancel</button>
+        
+    </mat-card> 
+  </div>

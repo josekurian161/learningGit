@@ -1,0 +1,25 @@
+.itemWrapp{float: left; width: 100%;}
+
+.areaInfo{float: left; width: 100%; margin-top:15px; }
+.areaInfo .item{float: left; padding: 15px; text-align: left;}
+.areaInfo .item mat-card{float: left; width: 100%; padding: 0px !important; background: #5985ee; color: #fff; } 
+.areaInfo .item:nth-child(2) mat-card{background: #17a2b8;}
+.areaInfo .item:nth-child(3) mat-card{background: #e66793;}
+.areaInfo .item:nth-child(4) mat-card{background: #46cd93;}
+.areaInfo .item:nth-child(5) mat-card{background: #17b86d;}
+.areaInfo .item h3{float: left; width: 100%; color: #fff; font-size:20px; margin: 0 0 15px; text-transform: capitalize;}
+.areaInfo .item h5{float: left; width: 100%; color: #fff; font-size:14px; margin: 0; font-weight: 400;}
+.areaInfo .item .topData{float: left; width: 100%; padding:30px 15px 20px; background: rgba(255,255,255,.1);}
+.areaInfo .item .button{float: left; width: 100%;  color: #fff; border-radius: 0; padding: 15px; background: none; margin: 0 !important; text-align: left; text-transform: capitalize; font-weight: 700;}
+.areaInfo .item .button mat-icon{float: right;  margin-top: 6px;}
+
+.graphBox  img{width: 100%;}
+
+@media screen and (max-width:1440px){ 
+    .areaInfo .item h3{font-size: 20px;}
+}
+@media screen and (max-width:1199px){ 
+    .areaInfo .item h3{font-size:17px;}
+    .areaInfo .item button{margin-top:10px;}
+    .areaInfo .item h3{min-height: 50px;}
+}

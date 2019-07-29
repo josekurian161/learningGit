@@ -1,0 +1,12 @@
+
+<div class="login-box">
+  <mat-card [formGroup]="AuditSelect">
+    <mat-form-field class="demo-full-width margin-top" >
+      <mat-select placeholder="Select Pending Audit" formControlName="seletAudit">
+      <mat-option *ngFor="let item of auditArray" [value]="item.s_AuditCode">{{item.s_AuditName}}</mat-option>
+      </mat-select>
+    
+      </mat-form-field>
+      <button mat-raised-button class="button"  [disabled]="AuditSelect.invalid" (click)="SetAudit()">Start Audit</button>
+  </mat-card> 
+</div>

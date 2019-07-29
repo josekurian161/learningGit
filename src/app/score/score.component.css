@@ -1,0 +1,26 @@
+
+.tblWrap{overflow: auto;}
+.tblWrap table{width: 100%; border-left: 1px solid #ddd;}
+.tblWrap table tbody{max-height: 60vh; overflow: auto; display: block;}
+.tblWrap td, .tblWrap th { border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding:7px;word-break: break-all;}  
+.tblWrap th { padding:10px 7px; text-align:left; background-color:#ed1c24; color:white;}
+.tblWrap tr:nth-child(even){background-color: #f2f2f2;}  
+.tblWrap tr { transition: ease-out 0.3s;}  
+.tblWrap tr:hover {background-color: #ddd;}  
+.tblWrap tr > th:first-child,
+.tblWrap tr > td:first-child{width:80px;}
+
+.scorePage{padding: 0 30px;}
+.scoreTbl {float: left; border-collapse: collapse; width: 100%;} 
+.scoreTbl .nos{width: 120px;}
+.scoreTbl .scoreType{width:200px;}
+
+ 
+tbody {display:block;   overflow:auto;}
+thead, tbody tr { display:table; width:100%; table-layout:fixed;}
+thead { width: calc( 100% - 17px )}
+ 
+@media screen and (max-width:1120px){  
+  .tblWrap table{min-width: 1120px;}
+  thead { width: 100%;}
+}  

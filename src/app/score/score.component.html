@@ -1,0 +1,34 @@
+<mat-progress-bar mode="indeterminate" [color]="accent" *ngIf="showProgress"></mat-progress-bar>
+
+<div class="fullContainer scorePage" [formGroup]="score" *ngIf="!showProgress">
+  <mat-card>
+    <div class="tblWrap scoreTbl">
+    <table formArrayName="multiRow" id="customers"  border="0" cellspacing="0" cellpadding="0">
+      <thead>
+      <tr>
+        <th> Sr no. </th>
+        <th> Question </th>
+        <th class="nos" *ngFor="let data of header"> {{data.s_EmpName}} </th>
+        <th class="scoreType"> Score </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let group of getmultirow.controls;let i=index;" [formGroupName]="i">
+        <td> {{i+1}} </td>
+        <td> {{group.get('s_Question').value}} </td>
+        <td class="nos" *ngFor="let dara of group.get('LeadScoreAuditAssessmentDetail').value"><label   matTooltip="{{dara.s_FullDescription}}" aria-label="Button that displays a tooltip when focused or hovered over">{{dara.s_Score}}</label> </td>
+        <td class="scoreType"><mat-form-field class="demo-full-width">
+            <input matInput formControlName="ScoreInput" [readonly]="group.get('ScoreInput').value=='NA'"  [type]="group.get('ScoreInput').value !='NA'? 'number':'text'"  placeholder="Score">
+          </mat-form-field></td>
+      </tr>
+
+    </tbody>
+    </table>
+  </div>
+  </mat-card>
+  <mat-card style="text-align: center">
+    <button mat-flat-button color="primary" [disabled]="score.invalid" *ngIf="ShowButton" (click)="submit()"> Save</button>
+    &nbsp;
+    <button mat-flat-button class="button" (click)="cancel()"> cancel</button>
+  </mat-card>
+</div>
