@@ -94,6 +94,10 @@ import { Ng2ImgMaxModule } from 'ng2-img-max';
     ImagePopupComponent,
     CheckboxComponent,
     TextAreaComponent
+
+
+
+    
     
   ],
   declarations: [
